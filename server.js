@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * mirror 폴더 안에서 index.html이 들어있는 폴더 찾기
+ * index.html을 포함한 디렉토리 자동 탐색
  */
 function findIndexHtmlDir(baseDir) {
   const files = fs.readdirSync(baseDir);
@@ -28,18 +28,17 @@ function findIndexHtmlDir(baseDir) {
   return null;
 }
 
-const siteRoot = findIndexHtmlDir(path.join(__dirname, "mirror"));
+// 📌 __dirname(프로젝트 루트) 아래에서 index.html 찾기
+const siteRoot = findIndexHtmlDir(__dirname);
 if (!siteRoot) {
-  console.error("❌ mirror 폴더에서 index.html을 찾을 수 없습니다.");
+  console.error("❌ index.html을 찾을 수 없습니다. 먼저 크롤링하세요.");
   process.exit(1);
 }
 
 console.log(`📂 siteRoot 자동 탐지됨: ${siteRoot}`);
 
-// 정적 파일 서빙
 app.use(express.static(siteRoot));
 
-// 기본 라우트 → index.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(siteRoot, "index.html"));
 });
