@@ -1,12 +1,17 @@
 {
-  "name": "crawler",
+  "name": "weeducate-template",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "crawl": "node site-crawler.js"
+  },
   "dependencies": {
-    "prompt": "^1.3.0",
+    "express": "^4.19.2",
     "puppeteer": "^24.18.0"
   },
-  "scripts": {
-    "start": "node site-crawler.js"
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
