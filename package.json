@@ -1,0 +1,12 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "prompt": "^1.3.0",
+    "puppeteer": "^24.18.0"
+  },
+  "scripts": {
+    "start": "node site-crawler.js"
+  }
+}
