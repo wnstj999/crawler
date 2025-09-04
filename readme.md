@@ -11,4 +11,4 @@ npm run dev
 
 템플릿 몬스터에서 가져올거면 demo - 프레임 소스 보기 - https://부터 복붙
 
-저장되는 폴더 명을 mirror 에서 다른걸로 바꾸고 싶다면 처음 node site-crawler.js 하기 전에 sote-crawler.js 파일 8번째 문단 const outputFolder = "./mirror"; <-- mirror 를 원하는 파일 명으로 변경
+저장되는 폴더 명을 mirror 에서 다른걸로 바꾸고 싶다면 처음 node site-crawler.js 하기 전에 site-crawler.js 파일 8번째 문단 const outputFolder = "./mirror"; <-- mirror 를 원하는 파일 명으로 변경
